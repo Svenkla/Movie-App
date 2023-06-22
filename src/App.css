@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.darktheme {
+  background-color: black;
+  color: white;
+}
+
+.whitetheme {
+  background-color: white;
+}
+
+/*HEADER*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(62, 62, 224);
+  color: #fff;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.linkToHomePage {
+  text-decoration: none;
+  color: white;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-form input {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-form button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/*BURGER MENU*/
+.hamburger-menu {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.line:nth-child(1) {
+  top: 0;
+}
+
+.line:nth-child(2) {
+  top: 8px;
+}
+
+.line:nth-child(3) {
+  top: 16px;
+}
+
+.open .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navigation {
+  position: fixed;
+  top: 10px;
+  right: 0px;
+  width: 200px;
+  height: 100%;
+}
+
+.navigation ul {
+  list-style-type: none;
+}
+
+.navigation li {
+  margin-top: 5px;
+}
+
+.navigation a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/*FILMI NA ZAČETNI STRANI*/
+.allMovies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.linkdoinfo {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.movieCard {
+  width: 250px;
+  margin: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.movieCard img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.movieCard .darkcolor {
+  color: white;
+}
+/*MOVIE INFO*/
+.movieinfo {
+  padding: 20px;
+  background-color: rgb(62, 62, 224);
+  color: #fff;
+  position: relative;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.movieinfoContainer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.movieinfoImg {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  padding: 20px 0 20px 20px;
+}
+
+.movieinfoDetails {
+  width: 50%;
+  padding: 20px;
+}
+
+.movieinfoTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movieinfoOverview {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
