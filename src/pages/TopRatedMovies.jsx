@@ -32,13 +32,17 @@ const TopRatedMovies = () => {
         <Link to="/" className="linkToHomePage">
           <h1>TOP RATED MOVIES</h1>
         </Link>
-        <SortMovies moviesData={movies} setMoviesData={setMovies} />
+
+        <div className="sort-theme-toprated">
+          <SortMovies setMoviesData={setMovies} moviesData={movies} />
+
+          <button onClick={() => setDarkTheme(!darkTheme)}>
+            {darkTheme ? "WHITE" : "DARK"}
+          </button>
+        </div>
+
         <BurgerMenu />
       </div>
-
-      <button onClick={() => setDarkTheme(!darkTheme)}>
-        {darkTheme ? "WHITE" : "DARK"}
-      </button>
 
       <div className="allMovies">
         {movies &&

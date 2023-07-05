@@ -29,13 +29,16 @@ const UpcomingMovies = () => {
           <h1>UPCOMING MOVIES</h1>
         </Link>
 
-        <SortMovies setMoviesData={setMovies} moviesData={movies} />
+        <div className="sort-theme-toprated">
+          <SortMovies setMoviesData={setMovies} moviesData={movies} />
+
+          <button onClick={() => setDarkTheme(!darkTheme)}>
+            {darkTheme ? "WHITE" : "DARK"}
+          </button>
+        </div>
+
         <BurgerMenu />
       </div>
-
-      <button onClick={() => setDarkTheme(!darkTheme)}>
-        {darkTheme ? "WHITE" : "DARK"}
-      </button>
 
       <div className="allMovies">
         {movies &&

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Search } from "./Search";
-import { Movies } from "./Movies";
 import BurgerMenu from "./BurgerMenu";
 import SortMovies from "./SortMovies";
 import { Link } from "react-router-dom";
@@ -21,22 +20,22 @@ export const Header = function ({
           <h1>MOVIES</h1>
         </Link>
 
+        <div className="sort-theme">
+          <SortMovies setMoviesData={setMovies} moviesData={movies} />
+
+          <button onClick={() => setDarkTheme(!darkTheme)}>
+            {darkTheme ? "WHITE" : "DARK"}
+          </button>
+        </div>
+
         <Search
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           className="search"
           handleSearch={handleSearch}
         />
-        <BurgerMenu />
-      </div>
 
-      <div>
-        <SortMovies setMoviesData={setMovies} moviesData={movies} />
-      </div>
-      <div>
-        <button onClick={() => setDarkTheme(!darkTheme)}>
-          {darkTheme ? "WHITE" : "DARK"}
-        </button>
+        <BurgerMenu />
       </div>
     </>
   );

@@ -1,6 +1,4 @@
 import React from "react";
-import { Search } from "./Search";
-import { useEffect, useState, useMemo } from "react";
 import { MovieCard } from "./MovieCard";
 import { SearchedMovies } from "./SearchedMovies";
 import { Link } from "react-router-dom";

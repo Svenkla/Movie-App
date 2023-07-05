@@ -24,42 +24,48 @@ export const MovieInfo = function () {
     <div className={darkTheme ? "darktheme" : "whitetheme"}>
       <div className="movieinfo">
         <h1>MOVIE INFO</h1>
+
+        <button
+          onClick={() => setDarkTheme(!darkTheme)}
+          className="movieinfo-theme"
+        >
+          {darkTheme ? "WHITE" : "DARK"}
+        </button>
+
         <BurgerMenu />
       </div>
 
-      <button onClick={() => setDarkTheme(!darkTheme)}>
-        {darkTheme ? "WHITE" : "DARK"}
-      </button>
+      <div className="movieinfobg">
+        <div className="movieinfoContainer">
+          <img
+            className="movieinfoImg"
+            src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+          />
+          <div className="movieinfoDetails">
+            <h2 className="movieinfoTitle"> {movie.original_title} </h2>
+            <p className="movieinfoOverview">
+              <span className="bold">Overview:</span> {movie.overview}
+            </p>
+            <p>
+              <span className="bold">Popularity:</span> {movie.popularity}
+            </p>
+            <p>
+              <span className="bold">Release date:</span> {movie.release_date}
+            </p>
+            <p>
+              <span className="bold">Runtime:</span> {movie.runtime} min
+            </p>
+            <p>
+              <span className="bold">Vote average:</span> {movie.vote_average}
+            </p>
+            <p>
+              <span className="bold">Languages:</span>
 
-      <div className="movieinfoContainer">
-        <img
-          className="movieinfoImg"
-          src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-        />
-        <div className="movieinfoDetails">
-          <h2 className="movieinfoTitle"> {movie.original_title} </h2>
-          <p className="movieinfoOverview">
-            <span className="bold">Overview:</span> {movie.overview}
-          </p>
-          <p>
-            <span className="bold">Popularity:</span> {movie.popularity}
-          </p>
-          <p>
-            <span className="bold">Release date:</span> {movie.release_date}
-          </p>
-          <p>
-            <span className="bold">Runtime:</span> {movie.runtime} min
-          </p>
-          <p>
-            <span className="bold">Vote average:</span> {movie.vote_average}
-          </p>
-          <p>
-            <span className="bold">Languages:</span>
-
-            {movie.spoken_languages?.map((language) => (
-              <span> {language.english_name}, </span>
-            ))}
-          </p>
+              {movie.spoken_languages?.map((language) => (
+                <span> {language.english_name}, </span>
+              ))}
+            </p>
+          </div>
         </div>
       </div>
     </div>
