@@ -24,7 +24,7 @@ const UpcomingMovies = () => {
 
   return (
     <div className={darkTheme ? "darktheme" : "whitetheme"}>
-      <div className="movieinfo">
+      <div className="movieinfo upcoming">
         <Link to="/" className="linkToHomePage">
           <h1>UPCOMING MOVIES</h1>
         </Link>
